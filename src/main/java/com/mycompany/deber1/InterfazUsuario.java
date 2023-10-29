@@ -1,14 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.mycompany.deber1;
+import java.util.Scanner;
 
-/**
- *
- * @author LENOVO
- */
 public class InterfazUsuario {
-    
+
+    private Scanner inputScanner;
+
+    public InterfazUsuario() {
+        this.inputScanner = new Scanner(System.in);
+    }
+
+    public void mostrarPregunta(String question) {
+        System.out.print(question + ": ");
+    }
+
+    public int obtenerRespuestaUsuario() {
+        return inputScanner.nextInt();
+    }
 }
+
