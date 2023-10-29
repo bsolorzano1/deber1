@@ -39,4 +39,15 @@ public class MainClass {
             }
 
             questionCount++;
+
+        }
+
+        double percentage = ((double) correctCount / questionCount) * 100;
+        if (percentage < 75) {
+            System.out.println("Por favor pide ayuda adicional a tu instructor");
+        } else {
+            System.out.println("Felicidades, estás listo para pasar al siguiente nivel!");
+        }
+
+        inputScanner.close();
 }
