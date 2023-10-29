@@ -21,5 +21,22 @@ public class MainClass {
         int correctCount = 0;
         int questionCount = 0;
 
+ while (questionCount < 10) {
+            int[] operands = questionMaker.generarOperandos();
+            String question = questionMaker.generarPregunta(operands[0], operands[1]);
+            userInterface.mostrarPregunta(question);
 
+            int userAnswer = userInterface.obtenerRespuestaUsuario();
+            double correctAnswer = questionMaker.calcularRespuesta(operands[0], operands[1]);
+
+            if (userAnswer == correctAnswer) {
+                correctCount++;
+                int randomIndex = rng.nextInt(positiveFeedback.length);
+                System.out.println(positiveFeedback[randomIndex]);
+            } else {
+                int randomIndex = rng.nextInt(negativeFeedback.length);
+                System.out.println(negativeFeedback[randomIndex]);
+            }
+
+            questionCount++;
 }
