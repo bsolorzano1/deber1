@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
-public class MainClass {
+public class NewMain {
     public static void main(String[] args) {
         Scanner inputScanner = new Scanner(System.in);
         Random rng = new Random();
@@ -21,7 +21,7 @@ public class MainClass {
         int correctCount = 0;
         int questionCount = 0;
 
- while (questionCount < 10) {
+        while (questionCount < 10) {
             int[] operands = questionMaker.generarOperandos();
             String question = questionMaker.generarPregunta(operands[0], operands[1]);
             userInterface.mostrarPregunta(question);
@@ -39,7 +39,6 @@ public class MainClass {
             }
 
             questionCount++;
-
         }
 
         double percentage = ((double) correctCount / questionCount) * 100;
@@ -50,4 +49,5 @@ public class MainClass {
         }
 
         inputScanner.close();
+    }
 }
